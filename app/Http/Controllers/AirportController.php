@@ -46,6 +46,13 @@ class AirportController
         return view('airports.create', ['countries' => $countries]);
     }
 
+    public function store(AirportUpdateRequest $request)
+    {
+        $this->airportService->create($request->validated());
+
+        return redirect()->route('airports.index');
+    }
+
     public function destroy(Airport $airport): RedirectResponse
     {
         $this->airportService->delete($airport);

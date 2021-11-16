@@ -25,7 +25,7 @@ class AirlineService
         $airline->delete();
     }
 
-    public function create(array $attributes)
+    public function create(array $attributes): Airline
     {
         $airportsIds = Arr::pull($attributes, 'airport_ids');
 

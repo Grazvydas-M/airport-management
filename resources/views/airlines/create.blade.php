@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Add New Member</div>
+                    <div class="card-header">Add New Airlines</div>
                     <div class="card-body">
                         <form method="POST" action="{{route('airlines.store')}}">
                             <div class="form-group">

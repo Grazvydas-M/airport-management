@@ -23,4 +23,14 @@ class AirportService
     {
         $airport->delete();
     }
+
+    public function create(array $attributes): Airport
+    {
+
+        $airport = new Airport($attributes);
+
+        $airport->save();
+
+        return $airport;
+    }
 }
