@@ -17,8 +17,8 @@ class CreateAirportsTable extends Migration
             $table->id();
             $table->string('name', 255);
             $table->unsignedBigInteger('country_id');
-            $table->float('latitude');
-            $table->float('longitude');
+            $table->decimal('latitude', 10, 7);
+            $table->decimal('longitude', 10, 7);
             $table->timestamps();
 
             $table->foreign('country_id')->references('id')->on('countries');

@@ -17,8 +17,8 @@ class CreateAirportAirlinesTable extends Migration
             $table->unsignedBigInteger('airport_id');
             $table->unsignedBigInteger('airline_id');
 
-            $table->foreign('airport_id')->references('id')->on('airports');
-            $table->foreign('airline_id')->references('id')->on('airlines');
+            $table->foreign('airport_id')->references('id')->on('airports')->onDelete('cascade');
+            $table->foreign('airline_id')->references('id')->on('airlines')->onDelete('cascade');
         });
     }
 

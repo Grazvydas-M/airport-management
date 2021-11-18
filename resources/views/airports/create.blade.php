@@ -14,6 +14,16 @@
                                 <small class="form-text text-muted">Airline name.</small>
                             </div>
                             <div class="form-group">
+                                <label>Latitude</label>
+                                <input type="text" class="form-control" name="latitude" value="{{ old('latitude') }}">
+                                <small class="form-text text-muted">Enter latitude.</small>
+                            </div>
+                            <div class="form-group">
+                                <label>Longitude</label>
+                                <input type="text" class="form-control" name="longitude" value="{{ old('longitude') }}">
+                                <small class="form-text text-muted">Enter longitude.</small>
+                            </div>
+                            <div class="form-group">
                                 <label>Countries list</label>
                                 <select name="country_id" class="form-control">
                                     <option></option>

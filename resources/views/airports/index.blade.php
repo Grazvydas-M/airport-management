@@ -16,10 +16,9 @@
                                 <li class="list-group-item" style="width: 100%; display: inline-block">
                                     <div class="list-block" style="display: flex; align-items: center">
                                         <div class="list-block_content" style="width: 100%">
-                                            <span> <b>{{ $airport->name }}</b> {{ $airport->country_id }} </span>
+                                            <span> <b>Airport:</b><i> {{ $airport->name }}</i> <b>Lat / Long:</b> <i> {{ $airport->latitude }}, {{ $airport->longitude }} {{$airport->country->name}}</i></span>
                                         </div>
                                         <div class="list-block_buttons" style="display: flex;">
-                                            <a href="" class="btn btn-secondary" style="margin: 3px">Show</a>
                                             <a href="{{route('airports.edit', [$airport])}}" class="btn btn-secondary"
                                                style="margin: 3px">Edit</a>
                                             <form method="POST" action="{{route('airports.destroy', $airport)}}">

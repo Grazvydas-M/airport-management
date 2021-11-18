@@ -22,21 +22,24 @@ class AirportController
 
     public function index(): View
     {
+        $countries = Country::orderBy('name')->get();
         $airports = $this->airportService->getAll();
 
-        return view('airports.index', ['airports' => $airports]);
+        return view('airports.index', ['airports' => $airports, 'countries' => $countries]);
     }
 
     public function edit(Airport $airport): View
     {
-        return view('airports.edit', ['airport' => $airport]);
+//        dd($airport->country->name);
+        $countries = Country::orderBy('name')->get();
+        return view('airports.edit', ['airport' => $airport, 'countries' => $countries]);
     }
 
     public function update(AirportUpdateRequest $request, Airport $airport): RedirectResponse
     {
         $this->airportService->update($airport, $request->validated());
 
-        return redirect()->route('airports.edit', ['airport' => $airport]);
+        return redirect()->route('airports.index', ['airport' => $airport]);
     }
 
     public function create()

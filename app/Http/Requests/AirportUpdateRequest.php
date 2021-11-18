@@ -26,7 +26,10 @@ class AirportUpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'string|required|min:3|max:255'
+            'name' => 'string|required|min:3|max:255',
+            'country_id' => 'required',
+            'latitude' => 'required|numeric|max:999|min:-999',
+            'longitude' => 'required|numeric|max:999|min:-999',
         ];
     }
 }

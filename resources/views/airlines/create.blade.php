@@ -31,7 +31,7 @@
                                         <option value="{{ $airport->id }}"> {{ $airport->name }}</option>
                                     @endforeach
                                 </select>
-                                <small class="form-text text-muted">Select country from the list</small>
+                                <small class="form-text text-muted">Select city from the list</small>
                             </div>
 
                             @csrf

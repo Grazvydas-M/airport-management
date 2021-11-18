@@ -34,16 +34,17 @@ class AirlinesController
 
     public function edit(Airline $airline): View
     {
+        $countries = Country::orderBy('name')->get();
         $airports = $this->airportService->getAll();
 
-        return view('airlines.edit', ['airline' => $airline, 'airports' => $airports]);
+        return view('airlines.edit', ['airline' => $airline, 'airports' => $airports, 'countries' => $countries]);
     }
 
     public function update(AirlineUpdateRequest $request, Airline $airline): RedirectResponse
     {
         $this->airlineService->update($airline, $request->validated());
 
-        return redirect()->route('airlines.edit', ['airline' => $airline]);
+        return redirect()->route('airlines.index', ['airline' => $airline]);
     }
 
     public function create()

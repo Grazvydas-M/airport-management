@@ -24,7 +24,7 @@ class AirlineStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'string|required|min:3|max:255'
+            'name' => 'string|required|min:3|max:255',
         ];
     }
 }
